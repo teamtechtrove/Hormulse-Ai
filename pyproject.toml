@@ -1,0 +1,62 @@
+[project]
+name = "hormulse-ai"
+version = "0.1.0"
+description = "Multi-AI provider chat platform"
+authors = [{name = "Team TechTrove", email = "team.techtrove.help@gmail.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["ai", "chat", "gemini", "gpt-4", "claude"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "Flask>=2.3.3",
+    "Flask-CORS>=4.0.0",
+    "Flask-SQLAlchemy>=3.0.5",
+    "python-dotenv>=1.0.0",
+    "google-generativeai>=0.3.0",
+    "openai>=0.27.8",
+    "anthropic>=0.7.1",
+    "requests>=2.31.0",
+    "Pillow>=10.0.0",
+    "python-dateutil>=2.8.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.9.1",
+    "flake8>=6.0.0",
+    "pylint>=2.17.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/teamtechtrove/Hormulse-Ai"
+Repository = "https://github.com/teamtechtrove/Hormulse-Ai"
+Issues = "https://github.com/teamtechtrove/Hormulse-Ai/issues"
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v --cov=. --cov-report=html"
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311']
+
+[tool.pylint]
+max-line-length = 88
